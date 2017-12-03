@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package media_manager.fileslist;
+
+message Request {
+    bool set = 1;
+} 
+
+message Response {
+    repeated string filenames = 1;
+}

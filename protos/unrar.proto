@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package media_manager.unrar;
+
+message Request {
+    string filename = 1;
+    string id = 2;
+} 
+
+message Response {
+    message Accepted {
+        bool successful = 1;
+    }
+
+    message Status {
+        int32 completed = 1;
+        int32 total = 2;
+    }
+
+    message Completed {
+        bool successful = 1;
+    }
+
+    string id = 1;
+
+    oneof type {
+        Accepted accepted = 2;
+        Status status = 3;
+        Completed completed = 4;
+    }
+}
