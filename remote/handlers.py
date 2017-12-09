@@ -4,24 +4,21 @@ from time import sleep
 
 from gevent.queue import Channel
 
-from common.messages.message_pb2 import Request as RequestMessage, Response as ResponseMessage
+from protos.message_pb2 import Request as RequestMessage, Response as ResponseMessage
 
+import utils
 from utils import try_read_channel, try_write_channel
 
 def unrar_handler(request: RequestMessage, output: Channel, cancel: Channel):
-    for i in range(1, 101):
+    def on_progress(completed: int, total: int):
         response = ResponseMessage()
         response.unrar.id = request.unrar.id
-        response.unrar.status.completed = i
-        response.unrar.status.total = 100
+        response.unrar.status.completed = completed
+        response.unrar.status.total = total
+        
+        try_write_channel(output, response.SerializeToString(), timeout=0)
+    
 
-        try_write_channel(output, response.SerializeToString(), timeout=10)
-
-        sleep(1)
-
-        cancelled, _ = try_read_channel(cancel, timeout=0)
-        if cancelled:
-            return
 
 HANDLERS = {
     'unrar': unrar_handler,

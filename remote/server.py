@@ -15,7 +15,7 @@ import gevent
 from gevent.server import StreamServer
 from gevent.queue import Channel
 
-from common.messages.message_pb2 import Request as RequestMessage, Response as ResponseMessage
+from protos.message_pb2 import Request as RequestMessage, Response as ResponseMessage
 
 from utils import try_read_channel, try_write_channel
 import handlers
