@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package media_manager;
+
+enum Location {
+    UNKNOWN = 0;
+    DOWNLOADS = 1;
+    STAGING = 2;
+}

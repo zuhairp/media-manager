@@ -1,13 +1,13 @@
 syntax = "proto3";
 
-package media_manager.unrar;
+package media_manager;
 
-message Request {
+message UnrarRequest {
     string filename = 1;
     string id = 2;
 } 
 
-message Response {
+message UnrarResponse {
     message Accepted {
         bool successful = 1;
     }

@@ -4,6 +4,10 @@ sys.path.append('..')
 from gevent import monkey
 monkey.patch_all()
 
+import logging
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
 import time
 import struct
 
@@ -68,7 +72,7 @@ def reader(client: socket, output: Channel, cancel: Channel):
 def connection_handler(client_socket: socket, address: Tuple[str, int]):
     '''This greenlet is spawned for each client that connects to the server'''
 
-    print('New connection from %s:%s' % address)
+    logger.info('New connection from %s:%s' % address)
 
     try:
         output = Channel()
@@ -77,10 +81,10 @@ def connection_handler(client_socket: socket, address: Tuple[str, int]):
         w = gevent.spawn(writer, client_socket, output, cancel)
         gevent.joinall([r, w])
     finally:
-        print('Disconnected %s:%s' % address)
+        logger.info('Disconnected %s:%s' % address)
 
     
 if __name__ == "__main__":
     server = StreamServer(('0.0.0.0', 3296), connection_handler)
-    print('Starting server on port 3296')
+    logger.info('Starting server on port 3296')
     server.serve_forever()

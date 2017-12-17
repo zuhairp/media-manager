@@ -17,30 +17,30 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='unrar.proto',
-  package='media_manager.unrar',
+  package='media_manager',
   syntax='proto3',
-  serialized_pb=_b('\n\x0bunrar.proto\x12\x13media_manager.unrar\"\'\n\x07Request\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"\xbd\x02\n\x08Response\x12\n\n\x02id\x18\x01 \x01(\t\x12:\n\x08\x61\x63\x63\x65pted\x18\x02 \x01(\x0b\x32&.media_manager.unrar.Response.AcceptedH\x00\x12\x36\n\x06status\x18\x03 \x01(\x0b\x32$.media_manager.unrar.Response.StatusH\x00\x12<\n\tcompleted\x18\x04 \x01(\x0b\x32\'.media_manager.unrar.Response.CompletedH\x00\x1a\x1e\n\x08\x41\x63\x63\x65pted\x12\x12\n\nsuccessful\x18\x01 \x01(\x08\x1a*\n\x06Status\x12\x11\n\tcompleted\x18\x01 \x01(\x05\x12\r\n\x05total\x18\x02 \x01(\x05\x1a\x1f\n\tCompleted\x12\x12\n\nsuccessful\x18\x01 \x01(\x08\x42\x06\n\x04typeb\x06proto3')
+  serialized_pb=_b('\n\x0bunrar.proto\x12\rmedia_manager\",\n\x0cUnrarRequest\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"\xbf\x02\n\rUnrarResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x39\n\x08\x61\x63\x63\x65pted\x18\x02 \x01(\x0b\x32%.media_manager.UnrarResponse.AcceptedH\x00\x12\x35\n\x06status\x18\x03 \x01(\x0b\x32#.media_manager.UnrarResponse.StatusH\x00\x12;\n\tcompleted\x18\x04 \x01(\x0b\x32&.media_manager.UnrarResponse.CompletedH\x00\x1a\x1e\n\x08\x41\x63\x63\x65pted\x12\x12\n\nsuccessful\x18\x01 \x01(\x08\x1a*\n\x06Status\x12\x11\n\tcompleted\x18\x01 \x01(\x05\x12\r\n\x05total\x18\x02 \x01(\x05\x1a\x1f\n\tCompleted\x12\x12\n\nsuccessful\x18\x01 \x01(\x08\x42\x06\n\x04typeb\x06proto3')
 )
 
 
 
 
-_REQUEST = _descriptor.Descriptor(
-  name='Request',
-  full_name='media_manager.unrar.Request',
+_UNRARREQUEST = _descriptor.Descriptor(
+  name='UnrarRequest',
+  full_name='media_manager.UnrarRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='filename', full_name='media_manager.unrar.Request.filename', index=0,
+      name='filename', full_name='media_manager.UnrarRequest.filename', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id', full_name='media_manager.unrar.Request.id', index=1,
+      name='id', full_name='media_manager.UnrarRequest.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -58,20 +58,20 @@ _REQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=36,
-  serialized_end=75,
+  serialized_start=30,
+  serialized_end=74,
 )
 
 
-_RESPONSE_ACCEPTED = _descriptor.Descriptor(
+_UNRARRESPONSE_ACCEPTED = _descriptor.Descriptor(
   name='Accepted',
-  full_name='media_manager.unrar.Response.Accepted',
+  full_name='media_manager.UnrarResponse.Accepted',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='successful', full_name='media_manager.unrar.Response.Accepted.successful', index=0,
+      name='successful', full_name='media_manager.UnrarResponse.Accepted.successful', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -89,26 +89,26 @@ _RESPONSE_ACCEPTED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=280,
-  serialized_end=310,
+  serialized_start=281,
+  serialized_end=311,
 )
 
-_RESPONSE_STATUS = _descriptor.Descriptor(
+_UNRARRESPONSE_STATUS = _descriptor.Descriptor(
   name='Status',
-  full_name='media_manager.unrar.Response.Status',
+  full_name='media_manager.UnrarResponse.Status',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='completed', full_name='media_manager.unrar.Response.Status.completed', index=0,
+      name='completed', full_name='media_manager.UnrarResponse.Status.completed', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='total', full_name='media_manager.unrar.Response.Status.total', index=1,
+      name='total', full_name='media_manager.UnrarResponse.Status.total', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -126,19 +126,19 @@ _RESPONSE_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=312,
-  serialized_end=354,
+  serialized_start=313,
+  serialized_end=355,
 )
 
-_RESPONSE_COMPLETED = _descriptor.Descriptor(
+_UNRARRESPONSE_COMPLETED = _descriptor.Descriptor(
   name='Completed',
-  full_name='media_manager.unrar.Response.Completed',
+  full_name='media_manager.UnrarResponse.Completed',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='successful', full_name='media_manager.unrar.Response.Completed.successful', index=0,
+      name='successful', full_name='media_manager.UnrarResponse.Completed.successful', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -156,40 +156,40 @@ _RESPONSE_COMPLETED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=356,
-  serialized_end=387,
+  serialized_start=357,
+  serialized_end=388,
 )
 
-_RESPONSE = _descriptor.Descriptor(
-  name='Response',
-  full_name='media_manager.unrar.Response',
+_UNRARRESPONSE = _descriptor.Descriptor(
+  name='UnrarResponse',
+  full_name='media_manager.UnrarResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='media_manager.unrar.Response.id', index=0,
+      name='id', full_name='media_manager.UnrarResponse.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='accepted', full_name='media_manager.unrar.Response.accepted', index=1,
+      name='accepted', full_name='media_manager.UnrarResponse.accepted', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='status', full_name='media_manager.unrar.Response.status', index=2,
+      name='status', full_name='media_manager.UnrarResponse.status', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='completed', full_name='media_manager.unrar.Response.completed', index=3,
+      name='completed', full_name='media_manager.UnrarResponse.completed', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -198,7 +198,7 @@ _RESPONSE = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_RESPONSE_ACCEPTED, _RESPONSE_STATUS, _RESPONSE_COMPLETED, ],
+  nested_types=[_UNRARRESPONSE_ACCEPTED, _UNRARRESPONSE_STATUS, _UNRARRESPONSE_COMPLETED, ],
   enum_types=[
   ],
   options=None,
@@ -207,69 +207,69 @@ _RESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='type', full_name='media_manager.unrar.Response.type',
+      name='type', full_name='media_manager.UnrarResponse.type',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=78,
-  serialized_end=395,
+  serialized_start=77,
+  serialized_end=396,
 )
 
-_RESPONSE_ACCEPTED.containing_type = _RESPONSE
-_RESPONSE_STATUS.containing_type = _RESPONSE
-_RESPONSE_COMPLETED.containing_type = _RESPONSE
-_RESPONSE.fields_by_name['accepted'].message_type = _RESPONSE_ACCEPTED
-_RESPONSE.fields_by_name['status'].message_type = _RESPONSE_STATUS
-_RESPONSE.fields_by_name['completed'].message_type = _RESPONSE_COMPLETED
-_RESPONSE.oneofs_by_name['type'].fields.append(
-  _RESPONSE.fields_by_name['accepted'])
-_RESPONSE.fields_by_name['accepted'].containing_oneof = _RESPONSE.oneofs_by_name['type']
-_RESPONSE.oneofs_by_name['type'].fields.append(
-  _RESPONSE.fields_by_name['status'])
-_RESPONSE.fields_by_name['status'].containing_oneof = _RESPONSE.oneofs_by_name['type']
-_RESPONSE.oneofs_by_name['type'].fields.append(
-  _RESPONSE.fields_by_name['completed'])
-_RESPONSE.fields_by_name['completed'].containing_oneof = _RESPONSE.oneofs_by_name['type']
-DESCRIPTOR.message_types_by_name['Request'] = _REQUEST
-DESCRIPTOR.message_types_by_name['Response'] = _RESPONSE
+_UNRARRESPONSE_ACCEPTED.containing_type = _UNRARRESPONSE
+_UNRARRESPONSE_STATUS.containing_type = _UNRARRESPONSE
+_UNRARRESPONSE_COMPLETED.containing_type = _UNRARRESPONSE
+_UNRARRESPONSE.fields_by_name['accepted'].message_type = _UNRARRESPONSE_ACCEPTED
+_UNRARRESPONSE.fields_by_name['status'].message_type = _UNRARRESPONSE_STATUS
+_UNRARRESPONSE.fields_by_name['completed'].message_type = _UNRARRESPONSE_COMPLETED
+_UNRARRESPONSE.oneofs_by_name['type'].fields.append(
+  _UNRARRESPONSE.fields_by_name['accepted'])
+_UNRARRESPONSE.fields_by_name['accepted'].containing_oneof = _UNRARRESPONSE.oneofs_by_name['type']
+_UNRARRESPONSE.oneofs_by_name['type'].fields.append(
+  _UNRARRESPONSE.fields_by_name['status'])
+_UNRARRESPONSE.fields_by_name['status'].containing_oneof = _UNRARRESPONSE.oneofs_by_name['type']
+_UNRARRESPONSE.oneofs_by_name['type'].fields.append(
+  _UNRARRESPONSE.fields_by_name['completed'])
+_UNRARRESPONSE.fields_by_name['completed'].containing_oneof = _UNRARRESPONSE.oneofs_by_name['type']
+DESCRIPTOR.message_types_by_name['UnrarRequest'] = _UNRARREQUEST
+DESCRIPTOR.message_types_by_name['UnrarResponse'] = _UNRARRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Request = _reflection.GeneratedProtocolMessageType('Request', (_message.Message,), dict(
-  DESCRIPTOR = _REQUEST,
+UnrarRequest = _reflection.GeneratedProtocolMessageType('UnrarRequest', (_message.Message,), dict(
+  DESCRIPTOR = _UNRARREQUEST,
   __module__ = 'unrar_pb2'
-  # @@protoc_insertion_point(class_scope:media_manager.unrar.Request)
+  # @@protoc_insertion_point(class_scope:media_manager.UnrarRequest)
   ))
-_sym_db.RegisterMessage(Request)
+_sym_db.RegisterMessage(UnrarRequest)
 
-Response = _reflection.GeneratedProtocolMessageType('Response', (_message.Message,), dict(
+UnrarResponse = _reflection.GeneratedProtocolMessageType('UnrarResponse', (_message.Message,), dict(
 
   Accepted = _reflection.GeneratedProtocolMessageType('Accepted', (_message.Message,), dict(
-    DESCRIPTOR = _RESPONSE_ACCEPTED,
+    DESCRIPTOR = _UNRARRESPONSE_ACCEPTED,
     __module__ = 'unrar_pb2'
-    # @@protoc_insertion_point(class_scope:media_manager.unrar.Response.Accepted)
+    # @@protoc_insertion_point(class_scope:media_manager.UnrarResponse.Accepted)
     ))
   ,
 
   Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,), dict(
-    DESCRIPTOR = _RESPONSE_STATUS,
+    DESCRIPTOR = _UNRARRESPONSE_STATUS,
     __module__ = 'unrar_pb2'
-    # @@protoc_insertion_point(class_scope:media_manager.unrar.Response.Status)
+    # @@protoc_insertion_point(class_scope:media_manager.UnrarResponse.Status)
     ))
   ,
 
   Completed = _reflection.GeneratedProtocolMessageType('Completed', (_message.Message,), dict(
-    DESCRIPTOR = _RESPONSE_COMPLETED,
+    DESCRIPTOR = _UNRARRESPONSE_COMPLETED,
     __module__ = 'unrar_pb2'
-    # @@protoc_insertion_point(class_scope:media_manager.unrar.Response.Completed)
+    # @@protoc_insertion_point(class_scope:media_manager.UnrarResponse.Completed)
     ))
   ,
-  DESCRIPTOR = _RESPONSE,
+  DESCRIPTOR = _UNRARRESPONSE,
   __module__ = 'unrar_pb2'
-  # @@protoc_insertion_point(class_scope:media_manager.unrar.Response)
+  # @@protoc_insertion_point(class_scope:media_manager.UnrarResponse)
   ))
-_sym_db.RegisterMessage(Response)
-_sym_db.RegisterMessage(Response.Accepted)
-_sym_db.RegisterMessage(Response.Status)
-_sym_db.RegisterMessage(Response.Completed)
+_sym_db.RegisterMessage(UnrarResponse)
+_sym_db.RegisterMessage(UnrarResponse.Accepted)
+_sym_db.RegisterMessage(UnrarResponse.Status)
+_sym_db.RegisterMessage(UnrarResponse.Completed)
 
 
 # @@protoc_insertion_point(module_scope)

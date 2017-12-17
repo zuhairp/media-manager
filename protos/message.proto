@@ -1,20 +1,20 @@
 syntax = "proto3";
 
-package meda_manager;
+package media_manager;
 
 import "fileslist.proto";
 import "unrar.proto";
 
 message Request {
     oneof type {
-        media_manager.fileslist.Request fileslist = 1;
-        media_manager.unrar.Request unrar = 2;
+        FilesListRequest fileslist = 1;
+        UnrarRequest unrar = 2;
     }
 }
 
 message Response {
     oneof type {
-        media_manager.fileslist.Response fileslist = 1;
-        media_manager.unrar.Response unrar = 2;
+        FilesListResponse fileslist = 1;
+        UnrarResponse unrar = 2;
     }
 }

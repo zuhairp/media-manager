@@ -13,29 +13,31 @@ from google.protobuf import descriptor_pb2
 _sym_db = _symbol_database.Default()
 
 
+from . import enums_pb2 as enums__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='fileslist.proto',
-  package='media_manager.fileslist',
+  package='media_manager',
   syntax='proto3',
-  serialized_pb=_b('\n\x0f\x66ileslist.proto\x12\x17media_manager.fileslist\"\x16\n\x07Request\x12\x0b\n\x03set\x18\x01 \x01(\x08\"\x1d\n\x08Response\x12\x11\n\tfilenames\x18\x01 \x03(\tb\x06proto3')
-)
+  serialized_pb=_b('\n\x0f\x66ileslist.proto\x12\rmedia_manager\x1a\x0b\x65nums.proto\"=\n\x10\x46ilesListRequest\x12)\n\x08location\x18\x01 \x01(\x0e\x32\x17.media_manager.Location\"Q\n\x11\x46ilesListResponse\x12)\n\x08location\x18\x01 \x01(\x0e\x32\x17.media_manager.Location\x12\x11\n\tfilenames\x18\x02 \x03(\tb\x06proto3')
+  ,
+  dependencies=[enums__pb2.DESCRIPTOR,])
 
 
 
 
-_REQUEST = _descriptor.Descriptor(
-  name='Request',
-  full_name='media_manager.fileslist.Request',
+_FILESLISTREQUEST = _descriptor.Descriptor(
+  name='FilesListRequest',
+  full_name='media_manager.FilesListRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='set', full_name='media_manager.fileslist.Request.set', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='location', full_name='media_manager.FilesListRequest.location', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
@@ -51,21 +53,28 @@ _REQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=44,
-  serialized_end=66,
+  serialized_start=47,
+  serialized_end=108,
 )
 
 
-_RESPONSE = _descriptor.Descriptor(
-  name='Response',
-  full_name='media_manager.fileslist.Response',
+_FILESLISTRESPONSE = _descriptor.Descriptor(
+  name='FilesListResponse',
+  full_name='media_manager.FilesListResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='filenames', full_name='media_manager.fileslist.Response.filenames', index=0,
-      number=1, type=9, cpp_type=9, label=3,
+      name='location', full_name='media_manager.FilesListResponse.location', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='filenames', full_name='media_manager.FilesListResponse.filenames', index=1,
+      number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -82,27 +91,29 @@ _RESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=68,
-  serialized_end=97,
+  serialized_start=110,
+  serialized_end=191,
 )
 
-DESCRIPTOR.message_types_by_name['Request'] = _REQUEST
-DESCRIPTOR.message_types_by_name['Response'] = _RESPONSE
+_FILESLISTREQUEST.fields_by_name['location'].enum_type = enums__pb2._LOCATION
+_FILESLISTRESPONSE.fields_by_name['location'].enum_type = enums__pb2._LOCATION
+DESCRIPTOR.message_types_by_name['FilesListRequest'] = _FILESLISTREQUEST
+DESCRIPTOR.message_types_by_name['FilesListResponse'] = _FILESLISTRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Request = _reflection.GeneratedProtocolMessageType('Request', (_message.Message,), dict(
-  DESCRIPTOR = _REQUEST,
+FilesListRequest = _reflection.GeneratedProtocolMessageType('FilesListRequest', (_message.Message,), dict(
+  DESCRIPTOR = _FILESLISTREQUEST,
   __module__ = 'fileslist_pb2'
-  # @@protoc_insertion_point(class_scope:media_manager.fileslist.Request)
+  # @@protoc_insertion_point(class_scope:media_manager.FilesListRequest)
   ))
-_sym_db.RegisterMessage(Request)
+_sym_db.RegisterMessage(FilesListRequest)
 
-Response = _reflection.GeneratedProtocolMessageType('Response', (_message.Message,), dict(
-  DESCRIPTOR = _RESPONSE,
+FilesListResponse = _reflection.GeneratedProtocolMessageType('FilesListResponse', (_message.Message,), dict(
+  DESCRIPTOR = _FILESLISTRESPONSE,
   __module__ = 'fileslist_pb2'
-  # @@protoc_insertion_point(class_scope:media_manager.fileslist.Response)
+  # @@protoc_insertion_point(class_scope:media_manager.FilesListResponse)
   ))
-_sym_db.RegisterMessage(Response)
+_sym_db.RegisterMessage(FilesListResponse)
 
 
 # @@protoc_insertion_point(module_scope)
