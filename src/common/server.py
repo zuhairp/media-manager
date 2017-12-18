@@ -19,10 +19,10 @@ import gevent
 from gevent.server import StreamServer
 from gevent.queue import Channel
 
-from protos.message_pb2 import Request as RequestMessage, Response as ResponseMessage
+from pyprotos.message_pb2 import Request as RequestMessage, Response as ResponseMessage
 
-from utils import try_read_channel, try_write_channel
-import handlers
+from .utils import try_read_channel, try_write_channel
+from . import handlers
 
 METADATA_UNPACKER = struct.Struct('!H')
 
@@ -83,8 +83,7 @@ def connection_handler(client_socket: socket, address: Tuple[str, int]):
     finally:
         logger.info('Disconnected %s:%s' % address)
 
-    
-if __name__ == "__main__":
-    server = StreamServer(('0.0.0.0', 3296), connection_handler)
-    logger.info('Starting server on port 3296')
+def server(port: int):
+    server = StreamServer(('0.0.0.0', port), connection_handler)
+    logger.info('Starting server on port %d' % port)
     server.serve_forever()

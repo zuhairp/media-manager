@@ -9,13 +9,12 @@ from time import sleep
 
 from gevent.queue import Channel
 
-from protos.message_pb2 import Request as RequestMessage, Response as ResponseMessage
-from protos.enums_pb2 import UNKNOWN as LOCATION_UNKNOWN, DOWNLOADS, STAGING
+from pyprotos.message_pb2 import Request as RequestMessage, Response as ResponseMessage
+from pyprotos.enums_pb2 import UNKNOWN as LOCATION_UNKNOWN, DOWNLOADS, STAGING
 
-import utils
-import config
+from . import utils, config
 
-from utils import try_read_channel, try_write_channel
+from .utils import try_read_channel, try_write_channel
 
 DIRECTORIES = {
     DOWNLOADS: config.DOWNLOADS_DIRECTORY,
